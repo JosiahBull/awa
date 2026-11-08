@@ -4,6 +4,10 @@ Notable changes between releases. Detailed migration notes for storage transitio
 
 ## [Unreleased]
 
+### Fixed
+
+- Add a durable operator halt/resume for `maintenance.prune` through the repeatable `prune_controls` patch. Compatible leaders observe it on their existing session; dispatch, cron, promotion, rescue and enqueue continue. Schema stays v40; all possible leaders must be upgraded or fenced. See [runtime controls](docs/runtime-controls.md).
+
 ## [0.6.14-alpha.1] — 2026-11-07
 
 Prerelease of the 0.6.14 queue-storage fixes. The schema remains v40. Apply the

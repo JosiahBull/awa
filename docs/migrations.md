@@ -250,6 +250,8 @@ is also available programmatically:
 - Rust: `awa::migrations::migration_sql()` and `awa::migrations::schema_patch_sql(SCHEMA_PATCHES)`
 - Python: `awa.migrations()` and `awa.schema_patches()`
 
+`R__prune_controls.sql` installs the durable operator control for reclamation without refreshing substrate installers. See [runtime controls](runtime-controls.md) for grants, rollout requirements and halt/resume commands.
+
 `awa migrate --sql` wraps its output in one transaction that takes the same
 advisory lock as `awa migrate`. Pipe it to `psql -v ON_ERROR_STOP=1`; without
 it psql exits 0 even when the transaction rolled back. `--no-transaction`
